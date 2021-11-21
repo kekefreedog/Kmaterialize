@@ -1,32 +1,15 @@
 {
-  "name": "materialize-css",
-  "description": "Builds Materialize distribution packages",
-  "author": "Alvin Wang, Alan Chang",
-  "homepage": "http://materializecss.com/",
-  "version": "1.0.0",
+  "name": "kmaterialize",
+  "description": "Kevin's Materialize (fork): A modern responsive front-end framework based on Material Design",
+  "author": "Kévin Zarshenas",
+  "version": "2.0.0",
   "main": "dist/js/materialize.js",
   "style": "dist/css/materialize.css",
-  "sass": "sass/materialize.scss",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Dogfalo/materialize.git"
+    "url": "git://github.com/kekefreedog/Kmaterialize.git"
   },
-  "bugs": {
-    "url": "https://github.com/Dogfalo/materialize/issues"
-  },
-  "scripts": {
-    "dev": "grunt monitor",
-    "test": "grunt travis",
-    "precommit": "lint-staged"
-  },
-  "lint-staged": {
-    "js/*.js": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "dependencies": {},
   "engine": "node >= 6",
   "devDependencies": {
     "autoprefixer": "^7.1.1",
@@ -63,8 +46,17 @@
     "dist",
     "extras",
     "js/**/*.js",
-    "sass/**/*.scss",
-    "Gruntfile.js",
     "LICENSE"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/kekefreedog/Kmaterialize/issues"
+  },
+  "homepage": "https://github.com/kekefreedog/Kmaterialize#readme",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
