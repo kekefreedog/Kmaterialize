@@ -8,7 +8,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kekefreedog/Kmaterialize"
+    "url": "git+https://github.com/kekefreedog/Kmaterialize.git"
   },
   "engine": "node >= 6",
   "files": [
@@ -26,8 +26,7 @@
     "test": "tests"
   },
   "scripts": {
-    "sass": "sass --watch ./sass/materialize.scss:.dist/css/materialize.css",
-    "sass-min": "sass --watch ./sass/materialize.scss:.dist/css/materialize-min.css --style compressed"
+    "sass": "sass --watch ./sass/materialize.scss:dist/css/materialize-min.css --style compressed"
   },
   "dependencies": {
     "node-sass": "^4.7.2"

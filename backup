@@ -1,0 +1,2 @@
+
+    "sass-min": "sass --watch ./sass/materialize.scss:.dist/css/materialize-min.css --style compressed"

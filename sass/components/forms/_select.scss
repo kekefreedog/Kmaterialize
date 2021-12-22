@@ -9,7 +9,8 @@ select {
   padding: $select-padding;
   border: $select-border;
   border-radius: $select-radius;
-  height: $input-height;
+  height: calc($input-height);
+  display: none;
 }
 
 .select-label {
@@ -81,6 +82,7 @@ select {
     right: 0;
     top: 0;
     bottom: 0;
+    width: 20;
     margin: auto 0;
     z-index: 0;
     fill: rgba(0,0,0,.87);
