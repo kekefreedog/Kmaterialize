@@ -58,3 +58,57 @@ small { font-size: 75%; }
     font-size: 1.2rem;
   }
 }
+
+// Fs define font size
+.lh_unset {
+  line-height: unset !important;
+}
+
+.lh-1 {
+  line-height: 1;
+}
+
+.lh-35px {
+  line-height: 35px !important;
+}
+
+.lh-40px {
+  line-height: 40px !important;
+}
+
+.lh-45_5px i {
+  line-height: 40.5px !important;
+}
+
+.fs-1rem {
+  font-size: 1rem !important;
+}
+
+.fs-1-6rem {
+  font-size: 1.6rem !important;
+}
+
+// fs-{i}px : 10px > 100px
+@for $i from 10 through 100 {
+  .fs-#{$i}px{
+    font-size: #{$i}px!important;
+    i {
+      font-size: #{$i}px!important;
+    }
+  }
+}
+// fs-{i} : 50M > 500%
+$i: 50;
+@while $i < 500 {
+  .fs-#{$i}{
+    font-size: #{$i}!important;
+    i {
+      font-size: #{$i}!important;
+    }
+  }
+  $i: $i+25;
+}
+
+.large-text {
+  font-size: 110% !important;
+}

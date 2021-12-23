@@ -13,6 +13,13 @@ label {
   color: $input-border-color;
 }
 
+// Fix
+.input-field.horizontal-radio {
+  /* Position */
+  display: flex;
+  justify-content: space-around;
+}
+
 @import 'input-fields';
 @import 'radio-buttons';
 @import 'checkboxes';

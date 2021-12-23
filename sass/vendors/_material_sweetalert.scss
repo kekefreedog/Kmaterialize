@@ -1,0 +1,88 @@
+.swal2-popup.swal2-modal.swal2-show {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .swal2-actions button {
+    -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+  }
+  
+  .swal2-title {
+    font-family: 'Muli', sans-serif !important;
+    font-weight: 400;
+  }
+  
+  .sweetalert_hide_select .select-wrapper {
+    display: none;
+  }
+  
+  /*SELECT 2*/
+  
+  .swal2-content {
+    .select2 {
+      font-size: 15px !important;
+      line-height: normal !important;
+    }
+  
+    .select2-search__field {
+      font-size: 15px !important;
+      line-height: normal !important;
+      border-bottom: none !important;
+      box-shadow: none !important;
+    }
+  }
+  
+  .select2-container.select2-container--default.select2-container--open {
+    z-index: 1100 !important;
+  }
+  
+  #swal2-title {
+    align-items: center !important;
+  }
+  
+  .large-btn-swal2 {
+    line-height: 0px;
+    color: #fff;
+    font-size: 1.0625em;
+    border: 0;
+    cursor: pointer;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: none;
+    margin: .3125em;
+    padding: .625em 2em;
+    font-weight: 500;
+    width: 100%;
+    background: linear-gradient(45deg, #0288d1, #26c6da) !important;
+    border-radius: 150px !important;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: .5px;
+    height: 36px;
+  }
+  
+  /* PDF viewer */
+  
+  .swal2-content .card-pdf embed {
+    width: 100%;
+    border-radius: 4px;
+  }
+  
+  .swal-pdf {
+    width: 850px !important;
+    padding: 3px 0px 0px 0px !important;
+  }
+  
+  .swal-large {
+    width: 850px !important;
+  }
+  
+  .swal-extra-large {
+    min-width: 70% !important;
+  }
+  
+  .swal-pdf .swal2-header {
+    padding: 8px 0px 0px 0px;
+  }

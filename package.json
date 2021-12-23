@@ -13,8 +13,6 @@
   "engine": "node >= 6",
   "files": [
     "dist",
-    "extras",
-    "js/**/*.js",
     "LICENSE"
   ],
   "bugs": {
@@ -26,7 +24,9 @@
     "test": "tests"
   },
   "scripts": {
-    "sass": "sass --watch ./sass/materialize.scss:dist/css/materialize-min.css --style compressed"
+    "sass": "sass --watch ./sass/materialize.scss:dist/css/materialize-min.css --style compressed",
+    "sass-theme-1-m": "sass --watch ./sass/themes/vertical-modern-menu-template/materialize.scss:dist/css/materialize-vd1-min.css --style compressed",
+    "sass-theme-1-s": "sass --watch ./sass/themes/vertical-modern-menu-template/style.scss:dist/css/materialize-vd2-min.css --style compressed"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",

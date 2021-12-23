@@ -39,3 +39,24 @@
 @import "components/pulse";
 @import "components/datepicker";
 @import "components/timepicker";
+
+// components additionnal
+@import "components/popup";
+@import "components/vrac";
+@import "components/timeline";
+@import "components/cursor";
+
+// components tiers
+@import "components/vendor";
+
+// compoenents vendor
+@import "vendors/material_apexchart";
+@import "vendors/material_dropify";
+@import "vendors/material_fullcalendar";
+@import "vendors/material_jexcel";
+@import "vendors/material_mstepper";
+@import "vendors/material_nouislider";
+@import "vendors/material_quill";
+@import "vendors/material_select2";
+@import "vendors/material_sweetalert";
+@import "vendors/material_trumbowyg";

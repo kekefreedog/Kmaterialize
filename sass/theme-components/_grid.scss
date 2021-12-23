@@ -1,0 +1,13 @@
+/*----------------------------------------
+  Grid 
+------------------------------------------*/
+
+.section{
+	padding: calc($gutter-width / 3) 0;
+}
+.row {
+	margin-bottom: 0;
+  .col {    
+    padding: 0 calc($gutter-width / 1.5);
+    }
+}

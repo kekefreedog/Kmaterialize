@@ -97,3 +97,45 @@
     }
   }
 }
+
+// Vertical tabs
+
+.tabs-vertical {
+  .tabs {
+    height: auto;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    display: -webkit-flex;
+    display: flex;
+
+    .tab a {
+      color: white !important;
+    }
+  }
+
+  .tab {
+    width: 100%;
+    border-right: 3px solid rgba(238, 238, 238, 0);
+
+    .active {
+      -moz-transition: border-color .5s ease;
+      -o-transition: border-color .5s ease;
+      -webkit-transition: border-color .5s ease;
+      transition: border-color .5s ease;
+      border-right: 3px solid #ffffff;
+    }
+
+    &:hover {
+      border-right: 3px solid rgba(238, 238, 238, 0.5);
+    }
+  }
+
+  .indicator, .tab-content {
+    display: none;
+  }
+
+  > .tab-content .active {
+    display: block;
+  }
+}
