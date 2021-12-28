@@ -519,20 +519,22 @@ $(function () {
 
    // Language translation
    // Init i18n and load language file
-   i18next.use(window.i18nextXHRBackend).init(
-      {
-         debug: false,
-         fallbackLng: "en",
-         backend: {
-            loadPath: "../../../app-assets/data/locales/{{lng}}.json"
+   try {
+      i18next.use(window.i18nextXHRBackend).init(
+         {
+            debug: false,
+            fallbackLng: "en",
+            backend: {
+               loadPath: "../../../app-assets/data/locales/{{lng}}.json"
+            },
+            returnObjects: true
          },
-         returnObjects: true
-      },
-      function (err, t) {
-         // resources have been loaded
-         jqueryI18next.init(i18next, $);
-      }
-   );
+         function (err, t) {
+            // resources have been loaded
+            jqueryI18next.init(i18next, $);
+         }
+      );
+   } catch (error) {}
    //Change language according to data-language of dropdown item
    $(".dropdown-language .dropdown-item").on("click", function () {
       var $this = $(this);

@@ -3,6 +3,7 @@
 var searchListLi = $(".search-list li"),
    searchList = $(".search-list"),
    searchSm = $(".search-sm"),
+   contentOverlay = $(".content-overlay"),
    searchBoxSm = $(".search-input-sm .search-box-sm"),
    searchListSm = $(".search-list-sm");
 
