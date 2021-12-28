@@ -19,6 +19,11 @@
     "minimist": "^1.2.0",
     "pug": "^2.0.0-rc.4"
   },
+  "engine": "node >= 6",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass-horizontal-menu": "sass --watch ./src/sass/themes/horizontal-menu-template/kmaterial.scss:dist/css/horizontal-menu/kmaterial.min.css --style compressed",
