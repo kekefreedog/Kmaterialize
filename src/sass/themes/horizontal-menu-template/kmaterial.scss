@@ -1,0 +1,18 @@
+/**
+ * Kmaterial horizontal menu
+ **/
+
+/* Material */
+@import "./materialize";
+
+/* Fonts */
+@import "./../../../../node_modules/material-icons/css/material-icons";
+
+/* Extra */
+@import "./style";
+@import "./../../layouts/style-horizontal";
+
+/* Vendors */
+@import "./../../../../node_modules/perfect-scrollbar/css/perfect-scrollbar";
+@import "./../../../../node_modules/prismjs/themes/prism";
+@import "./../../../../node_modules/flag-icons/css/flag-icons";
