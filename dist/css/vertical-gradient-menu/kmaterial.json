@@ -1,0 +1,25 @@
+{
+    "template": {
+        "html": {
+            "attributes": {
+                "class": "loading",
+                "data-textdirection": "ltr"
+            }
+        },
+        "body": {
+            "attributes": {
+                "class": [
+                    "vertical-layout",
+                    "page-header-light",
+                    "vertical-menu-collapsible",
+                    "preload-transitions",
+                    "2-columns"
+                ],
+                "data-open": "click",
+                "data-menu": "vertical-gradient-menu",
+                "data-col": "2-columns"
+            }
+        }
+    },
+    "starter-kit": "starter-kit/vertical-gradient-menu-template/page-blank.html"
+}
