@@ -4,7 +4,8 @@ var searchListLi = $(".search-list li"),
    searchList = $(".search-list"),
    searchSm = $(".search-sm"),
    searchBoxSm = $(".search-input-sm .search-box-sm"),
-   searchListSm = $(".search-list-sm");
+   searchListSm = $(".search-list-sm"),
+   contentOverlay = $(".content-overlay");
 
 $(function () {
    "use strict";
