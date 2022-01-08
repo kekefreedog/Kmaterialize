@@ -512,7 +512,7 @@ $(function () {
       chatScrollAuto[0].scrollTop = chatScrollAuto[0].scrollHeight;
    }
 
-   // Fullscreen
+   // Fullscreen (vanilla js)
    function toggleFullScreen() {
       if (
          (document.fullScreenElement && document.fullScreenElement !== null) ||
@@ -541,9 +541,17 @@ $(function () {
          }
       }
    }
-   $(".toggle-fullscreen").click(function () {
+   /*$(".toggle-fullscreen").click(function () {
       toggleFullScreen();
-   });
+   }); */
+   // Toggle full screen (vanilla js)
+   let toggleFullscreenEl = document.querySelectorAll(".toggle-fullscreen");
+   if(toggleFullscreenEl.length)
+      for(let toggleFullscreen of toggleFullscreenEl)
+         toggleFullscreen.addEventListener(
+            'click', 
+            toggleFullScreen
+         )
 
    // Detect touch screen and enable scrollbar if necessary
    function is_touch_device() {
