@@ -10,7 +10,7 @@ var sidenavMain = $(".sidenav-main"),
 //----------
 
 // Menu: Default menu collapse check
-defaultMenuCollapse();
+/* defaultMenuCollapse();
 function defaultMenuCollapse() {
    if ($("body").hasClass("menu-collapse") && $(window).width() > 993) {
       //  Toggle navigation expan and collapse
@@ -20,16 +20,59 @@ function defaultMenuCollapse() {
       toogleMenuCollapse();
       navigationCollapse();
    }
+} */
+
+// Menu: Default menu collapse check (vanilla js)
+defaultMenuCollapse = () => {
+
+   // Ctx
+   let body = document.getElementsByTagName("body")[0];
+   let sidenav = document.getElementById('sidenav');
+   let navbarTogglerI = document.querySelector('.nav-collapsible .navbar-toggler i');
+   let navbar = document.querySelector("#header .navbar .nav-collapsible");
+
+   // Check
+   if(body.classList.contains("menu-collapse") && window.innerWidth >= 994){
+
+      // Toggle
+      sidenav.classList.remove("nav-lock");
+      navbarTogglerI.innerText = "radio_button_unchecked";
+      navbar.classList.remove('sideNav-lock');
+      toogleMenuCollapse();
+      navigationCollapse();
+
+   }
+
 }
+defaultMenuCollapse();
 
 // Menu: Function for toggle class for menu collapse
-function toogleMenuCollapse() {
+/* function toogleMenuCollapse() {
    if (sidenavMain.hasClass("nav-expanded") && !sidenavMain.hasClass("nav-lock")) {
       sidenavMain.toggleClass("nav-expanded");
       $("#main").toggleClass("main-full");
    } else {
       $("#main").toggleClass("main-full");
    }
+} */
+// Menu: Function for toggle class for menu collapse (vanilla js)
+toogleMenuCollapse = () => {
+
+   // Ctx
+   let sidenav = document.getElementById('sidenav');
+   let main = document.getElementById('main');
+
+   if(sidenav.classList.contains("nav-expanded") && !sidenav.classList.contains("nav-lock")){
+
+      sidenav.classList.toggle("nav-expanded");
+      main.classList.toggle("main-full");
+
+   }else{
+
+      main.classList.toggle("main-full");
+
+   }
+
 }
 
 // Menu: Collapse navigation
@@ -568,10 +611,11 @@ $(function () {
          edge: "left"
       });
    }
+   
 });
 
-//Collapse menu on below 994 screen
-$(window).on("resize", function () {
+// Collapse menu on below 994 screen
+/* $(window).on("resize", function () {
    if ($(window).width() < 994) {
       if (sidenavMain.hasClass("nav-collapsed")) {
          sidenavMain.removeClass("nav-collapsed").addClass("nav-lock nav-expanded");
@@ -583,4 +627,53 @@ $(window).on("resize", function () {
          navCollapsible.removeClass("sideNav-lock").addClass("nav-collapsed");
       }
    }
-});
+}); */
+ 
+// Collapse menu on below 994 screen (vanilla JS)
+window.addEventListener(
+   "resize",
+   () => {
+
+      // Set ctx
+      let sidenav = document.getElementById("sidenav");
+      let navbar = document.querySelector("#header .navbar .nav-collapsible");
+      let body = document.getElementsByTagName("body")[0];
+
+      // Check window width is smaller than 994
+      if(window.innerHeight < 994){
+
+         // Check ctx has nav-collapsed
+         if(sidenav.classList.contains("nav-collapsed")){
+
+            // Toogle class for sidenav
+            sidenav.classList.remove("nav-collapsed");
+            sidenav.classList.add("nav-lock", "nav-expanded");
+
+            // Toogle class for navbar
+            navbar.classList.remove("nav-collapsed");
+            navbar.classList.add("sideNav-lock");
+
+         }
+
+      }else
+      // Check window width is larger than 994
+      if(window.innerHeight >= 994 && body.classList.contains("menu-collapse")){
+
+         // Check ctx has nav-collapsed
+         if(sidenav.classList.contains("nav-lock")){
+
+            // Toogle class for sidenav
+            sidenav.classList.remove("nav-lock", "nav-expanded");
+            sidenav.classList.add("nav-collapsed");
+
+            // Toogle class for navbar
+            navbar.classList.remove("sideNav-lock");
+            navbar.classList.add("nav-collapsed");
+
+         }
+
+      }
+
+   }
+)
+
