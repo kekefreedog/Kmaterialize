@@ -512,47 +512,6 @@ $(function () {
       chatScrollAuto[0].scrollTop = chatScrollAuto[0].scrollHeight;
    }
 
-   // Fullscreen (vanilla js)
-   function toggleFullScreen() {
-      if (
-         (document.fullScreenElement && document.fullScreenElement !== null) ||
-         (!document.mozFullScreen && !document.webkitIsFullScreen)
-      ) {
-         if (document.documentElement.requestFullScreen) {
-            document.documentElement.requestFullScreen();
-         } else if (document.documentElement.mozRequestFullScreen) {
-            document.documentElement.mozRequestFullScreen();
-         } else if (document.documentElement.webkitRequestFullScreen) {
-            document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-         } else if (document.documentElement.msRequestFullscreen) {
-            if (document.msFullscreenElement) {
-               document.msExitFullscreen();
-            } else {
-               document.documentElement.msRequestFullscreen();
-            }
-         }
-      } else {
-         if (document.cancelFullScreen) {
-            document.cancelFullScreen();
-         } else if (document.mozCancelFullScreen) {
-            document.mozCancelFullScreen();
-         } else if (document.webkitCancelFullScreen) {
-            document.webkitCancelFullScreen();
-         }
-      }
-   }
-   /*$(".toggle-fullscreen").click(function () {
-      toggleFullScreen();
-   }); */
-   // Toggle full screen (vanilla js)
-   let toggleFullscreenEl = document.querySelectorAll(".toggle-fullscreen");
-   if(toggleFullscreenEl.length)
-      for(let toggleFullscreen of toggleFullscreenEl)
-         toggleFullscreen.addEventListener(
-            'click', 
-            toggleFullScreen
-         )
-
    // Detect touch screen and enable scrollbar if necessary
    function is_touch_device() {
       try {
