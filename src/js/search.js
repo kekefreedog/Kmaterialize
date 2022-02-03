@@ -1,6 +1,6 @@
 
 
-var searchListLi = $(".search-list li"),
+/* var searchListLi = $(".search-list li"),
    searchList = $(".search-list"),
    searchSm = $(".search-sm"),
    searchBoxSm = $(".search-input-sm .search-box-sm"),
@@ -238,4 +238,4 @@ $(window).on("resize", function () {
       searchBoxSm.val("");
       $(".search-input-sm .search-box-sm").val("");
    }
-});
+}); */
