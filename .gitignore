@@ -1,4 +1,8 @@
+# NPM
 node_modules/
+package-lock.json
+
+# Mac parasites
 src/sass/themes/.DS_Store
 app-assets/vendors/sweetalert/.DS_Store
 app-assets/vendors/jquery-jvectormap/.DS_Store
