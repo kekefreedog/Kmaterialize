@@ -1,0 +1,12 @@
+<div id="main" class="{{#ifEquals _cookies.SIDENAV.STATUS "expanded"}}{{else}}main-full{{/ifEquals}}" data-layout="structure/main">
+    <div class="row container">
+        {{!-- Check user interface main --}}
+        {{#if _user_interface.main}}
+            {{!-- Iteration des data --}}
+            {{#each _user_interface.main}}
+                {{!-- Display content --}}
+                {{{this}}}
+            {{/each}}
+        {{/if}}
+    </div>
+</div>

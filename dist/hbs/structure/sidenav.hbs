@@ -1,0 +1,169 @@
+{{!-- Sidenav
+
+Hide files beginning by dot #3
+
+ --}}
+<aside id="sidenav" data-layout="structure/sidenav" class="sidenav-main nav-collapsible {{#ifEquals _cookies.SIDENAV.STATUS "expanded"}} nav-lock nav-expanded{{else}} nav-collapsed{{/ifEquals}} sidenav-dark gradient-45deg-deep-purple-blue sidenav-gradient sidenav-active-rounded">
+    <div class="brand-sidebar">
+        <h1 class="logo-wrapper">
+            <a class="brand-logo darken-1" href="/">
+                <img class="hide-on-med-and-down " src="/media/logo/logo_fixstudio_medium_white" alt="materialize logo" />
+                <img class="show-on-medium-and-down hide-on-med-and-up" src="/media/logo/logo_f_small_white/" alt="materialize logo" />
+                <span class="logo-text hide-on-med-and-down">Wiki</span>
+            </a>
+            <a class="navbar-toggler">
+                <i class="material-icons">{{#ifEquals _cookies.SIDENAV.STATUS "expanded"}}radio_button_checked{{else}}radio_button_unchecked{{/ifEquals}}</i>
+            </a>
+        </h1>
+    </div>
+    <ul class="sidenav sidenav-collapsible leftside-navigation collapsible sidenav-fixed menu-shadow" id="slide-out" data-menu="menu-navigation" data-collapsible="menu-accordion">
+
+        {{!-- Accueil --}}
+        <li class="bold"><a class="waves-effect waves-cyan{{#ifEquals _context.route.current "/"}} active{{/ifEquals}}" href="/"><i class="material-icons">home</i><span class="menu-title">Accueil</span></a>
+        </li>
+
+        {{!-- Check navigation --}}
+        {{#if _user_interface.navigation}}
+            {{!-- Check navigation --}}
+            {{#each _user_interface.navigation}}
+
+                {{!-- Check if entity is drive --}}
+                {{#ifEquals this.entity "drive"}}
+                <li class="navigation-header">
+                    <a class="navigation-header-text">Google Drive </a>
+                    <i class="navigation-header-icon material-icons">more_horiz</i>
+                </li>
+                {{/ifEquals}}
+
+                {{!-- Check if file --}}
+                {{#if this.relationships.file}}
+                    {{!-- Iteration des files --}}
+                    {{#each this.relationships.file}}            
+                    <li class="bold">
+                        <a class="waves-effect waves-cyan{{#ifEquals @root._context.route.current this._user_interface.root}} active{{/ifEquals}}" href="{{this._user_interface.root}}">
+                            <i class="{{this._user_interface.icon.class}}">{{this._user_interface.icon.text}}</i>
+                            <span class="menu-title">{{this.attributes.name}}</span>
+                        </a>
+                    </li>
+                    {{/each}}
+                {{/if}}
+
+                {{!-- Check if folder --}}
+                {{#if this.relationships.folder}}
+                    {{!-- Iteration des folders --}}
+                    {{#each this.relationships.folder}}{{#unless this._user_interface.hidden}}
+                    <li class="bold{{#each @root._context.route.parents}}{{#ifEquals this ../this._user_interface.root}} active{{/ifEquals}}{{/each}}">
+                        <a class="collapsible-header waves-effect waves-cyan">
+                            <i class="{{this._user_interface.icon.class}}">{{this._user_interface.icon.text}}</i>
+                            <span class="menu-title">{{this.attributes.name}}</span>
+                        </a>
+                        <div class="collapsible-body">
+                            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+                                {{!-- Depth 2 --}}
+                                {{!-- Check if file --}}
+                                {{#if this.relationships.file}}
+                                    {{!-- Iteration des files --}}
+                                    {{#each this.relationships.file}}{{#unless this._user_interface.hidden}}      
+                                    <li class="bold{{#each @root._context.route.parents}}{{#ifEquals this ../this._user_interface.root}} active{{/ifEquals}}{{/each}}">
+                                        <a class="waves-effect waves-cyan{{#ifEquals @root._context.route.current this._user_interface.root}} active{{/ifEquals}}"  href="{{this._user_interface.root}}">
+                                            <i class="{{this._user_interface.icon.class}}">{{this._user_interface.icon.text}}</i>
+                                            <span class="menu-title">{{this.attributes.name}}</span>
+                                        </a>
+                                    </li>
+                                    {{/unless}}{{/each}}
+                                {{/if}}
+
+                                {{!-- Check if folder --}}
+                                {{#if this.relationships.folder}}
+                                    {{!-- Iteration des folders --}}
+                                    {{#each this.relationships.folder}}{{#unless this._user_interface.hidden}}
+                                    <li class="bold{{#each @root._context.route.parents}}{{#ifEquals this ../this._user_interface.root}} active{{/ifEquals}}{{/each}}">
+                                        <a class="collapsible-header waves-effect waves-cyan">
+                                            <i class="{{this._user_interface.icon.class}}">{{this._user_interface.icon.text}}</i>
+                                            <span class="menu-title">{{this.attributes.name}}</span>
+                                        </a>
+                                        <div class="collapsible-body">
+                                            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+                                                {{!-- Depth 3 --}}
+                                                {{!-- Check if file --}}
+                                                {{#if this.relationships.file}}
+                                                    {{!-- Iteration des files --}}
+                                                    {{#each this.relationships.file}}{{#unless this._user_interface.hidden}}            
+                                                    <li class="bold">
+                                                        <a class="waves-effect waves-cyan{{#ifEquals @root._context.route.current this._user_interface.root}} active{{/ifEquals}}" href="{{this._user_interface.root}}">
+                                                            <i class="{{this._user_interface.icon.class}}">{{this._user_interface.icon.text}}</i>
+                                                            <span class="menu-title">{{this.attributes.name}}</span>
+                                                        </a>
+                                                    </li>
+                                                    {{/unless}}{{/each}}
+                                                {{/if}}
+
+                                                {{!-- Check if folder --}}
+                                                {{#if this.relationships.folder}}
+                                                    {{!-- Iteration des folders --}}
+                                                    {{#each this.relationships.folder}}{{#unless this._user_interface.hidden}} 
+                                                    <li class="bold{{#each @root._context.route.parents}}{{#ifEquals this ../this._user_interface.root}} active{{/ifEquals}}{{/each}}">
+                                                        <a class="collapsible-header waves-effect waves-cyan">
+                                                            <i class="{{this._user_interface.icon.class}}">{{this._user_interface.icon.text}}</i>
+                                                            <span class="menu-title">{{this.attributes.name}}</span>
+                                                        </a>
+                                                        <div class="collapsible-body">
+                                                            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+                                                                {{!-- Depth 4 --}}
+                                                                {{!-- Check if file --}}
+                                                                {{#if this.relationships.file}}
+                                                                    {{!-- Iteration des files --}}
+                                                                    {{#each this.relationships.file}}{{#unless this._user_interface.hidden}}      
+                                                                    <li class="bold">
+                                                                        <a class="waves-effect waves-cyan{{#ifEquals @root._context.route.current this._user_interface.root}} active{{/ifEquals}}" href="{{this._user_interface.root}}">
+                                                                            <i class="{{this._user_interface.icon.class}}">{{this._user_interface.icon.text}}</i>
+                                                                            <span class="menu-title">{{this.attributes.name}}</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    {{/unless}}{{/each}}
+                                                                {{/if}}
+                                                                {{!-- Depth 4 --}}
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    {{/unless}}{{/each}}
+                                                {{/if}}
+                                                {{!-- Depth 3 --}}
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    {{/unless}}{{/each}}
+                                {{/if}}
+                                {{!-- Depth 2 --}}
+                            </ul>
+                        </div>
+                    </li>
+                    {{/unless}}{{/each}}
+                {{/if}}
+
+
+            {{/each}}
+        {{/if}}
+
+        {{!-- Divers --}}
+        <li class="navigation-header"><a class="navigation-header-text">Divers </a><i class="navigation-header-icon material-icons">more_horiz</i>
+        </li>
+
+        {{!-- Connexion --}}
+        <li class="bold">
+            <a class="waves-effect waves-cyan{{#ifEquals _context.route.current "/login/"}} active{{/ifEquals}}" href="/login/"><i class="material-icons">login</i><span class="menu-title">Se connecter</span></a>
+        </li>
+
+        {{!-- Tutoriel --}}
+        <li class="bold">
+            <a class="waves-effect waves-cyan{{#ifEquals _context.route.current "/tutorial/"}} active{{/ifEquals}}" href="/tutorial/"><i class="material-icons">help_outline</i><span class="menu-title">Tutoriel</span></a>
+        </li>
+
+    </ul>
+    {{!-- Background & Button for small screen --}}
+    <div class="navigation-background">
+    </div>
+    <a class="sidenav-trigger btn-sidenav-toggle btn-floating btn-medium waves-effect waves-light hide-on-large-only gradient-45deg-deep-purple-blue gradient-shadow" data-target="slide-out">
+        <i class="material-icons">menu</i>
+    </a>
+</aside>

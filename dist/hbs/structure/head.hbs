@@ -1,0 +1,64 @@
+<header class="page-topbar" id="header" data-layout="structure/head">
+    <div class="navbar navbar-fixed">
+        <nav class="navbar-main navbar-color nav-collapsible {{#ifEquals _cookies.SIDENAV.STATUS "expanded"}}sideNav-lock{{/ifEquals}} navbar-light">
+            <div class="nav-wrapper">
+                {{!-- Navbar list --}}
+                <ul class="navbar-list">
+                    {{!-- Search full --}}
+                    <li class="header-search-wrapper hide-on-med-and-down">
+                        <i class="material-icons">search</i>
+                        <input id="search" class="header-search-input z-depth-2" type="text" name="Search" placeholder="Rechercher"
+                            data-search="template-list" data-component="search">
+                        <ul class="search-list collection display-none"></ul>
+                    </li>
+                    {{!-- Search small --}}
+                    <li class="hide-on-large-only search-input-wrapper nav-button-circle">
+                        <a class="waves-effect waves-block waves-light search-button"><i class="material-icons">search</i></a>
+                    </li>
+                    {{!-- Dark mode --}}
+                    <li class="hide-on-med-and-down nav-button-circle">
+                        <a class="waves-effect waves-block waves-light toggle-theme-mode"
+                            {{#if _cookies.THEME.MODE}}
+                            {{#ifEquals _cookies.THEME.MODE "dark"}} data-tippy-content="Mode jour"><i class="material-icons">light_mode</i{{else}}
+                            data-tippy-content="Mode nuit"><i class="material-icons">dark_mode</i{{/ifEquals}}
+                            {{else}}
+                            data-tippy-content="Mode nuit"><i class="material-icons">dark_mode</i
+                            {{/if}}>
+                        </a>
+                    </li>
+                    {{!-- Full screen --}}
+                    <li class="hide-on-med-and-down nav-button-circle">
+                        <a class="waves-effect waves-block waves-light toggle-fullscreen"><i class="material-icons">settings_overscan</i></a>
+                    </li>
+                    {{!-- Check navbar-list.add --}}
+                    {{#each _user_interface.header.navbar-list.add}}
+                        {{!-- Type --}}
+                        <li class="hide-on-med-and-down {{this.type}}">
+                            <a{{#each this.data}} data-{{@key}}="{{this}}"{{/each}} class="waves-effect waves-block waves-light {{this.action}}">
+                                {{#if this.style.icon.class}}
+                                <i class="{{this.style.icon.class}}">{{this.style.icon.text}}</i>
+                                {{/if}}
+                            </a>
+                        </li>
+                    {{/each}}
+
+                </ul>
+            </div>
+            {{!-- Search bar for small screen --}}
+            <nav class="display-none search-sm">
+                <div class="nav-wrapper">
+                    <form id="navbarForm">
+                        <div class="input-field search-input-sm">
+                            <input class="search-box-sm mb-0" type="search" required="" id="search" placeholder="Rechercher" data-search="template-list" data-component="search">
+                            <label class="label-icon" for="search">
+                                <i class="material-icons search-sm-icon">search</i>
+                            </label>
+                            <i class="material-icons search-sm-close">close</i>
+                            <ul class="search-list collection search-list-sm display-none"></ul>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </nav>
+    </div>
+</header>
