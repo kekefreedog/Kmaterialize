@@ -1,0 +1,25 @@
+{
+    "template": {
+        "html": {
+            "attributes": {
+                "class": "loading",
+                "data-textdirection": "ltr"
+            }
+        },
+        "body": {
+            "attributes": {
+                "class": [
+                    "horizontal-layout",
+                    "page-header-light",
+                    "horizontal-menu",
+                    "preload-transitions",
+                    "2-columns"
+                ],
+                "data-open": "click",
+                "data-menu": "horizontal-menu",
+                "data-col": "2-columns"
+            }
+        }
+    },
+    "starter-kit": "starter-kit/horizontal-menu-template/page-blank.html"
+}

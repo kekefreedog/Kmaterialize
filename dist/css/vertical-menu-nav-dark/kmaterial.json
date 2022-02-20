@@ -12,12 +12,12 @@
                     "vertical-layout",
                     "page-header-light",
                     "vertical-menu-collapsible",
-                    "vertical-dark-menu",
+                    "vertical-menu-nav-dark",
                     "preload-transitions",
                     "2-columns"
                 ],
                 "data-open": "click",
-                "data-menu": "vertical-dark-menu",
+                "data-menu": "vertical-menu-nav-dark",
                 "data-col": "2-columns"
             }
         },
@@ -27,11 +27,12 @@
                     "sidenav-main",
                     "nav-expanded",
                     "nav-collapsible",
-                    "sidenav-dark",
+                    "sidenav-light",
+                    "navbar-full",
                     "sidenav-active-rounded"
                 ]
             }
         }
     },
-    "starter-kit": "/starter-kit/vertical-dark-menu-template/page-blank.html"
+    "starter-kit": "starter-kit/vertical-menu-nav-dark-template/page-blank.html"
 }

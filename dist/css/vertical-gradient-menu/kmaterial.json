@@ -12,6 +12,7 @@
                     "vertical-layout",
                     "page-header-light",
                     "vertical-menu-collapsible",
+                    "vertical-gradient-menu",
                     "preload-transitions",
                     "2-columns"
                 ],
@@ -19,7 +20,20 @@
                 "data-menu": "vertical-gradient-menu",
                 "data-col": "2-columns"
             }
+        },
+        "aside": {
+            "attributes": {
+                "class": [
+                    "gradient-45deg-deep-purple-blue",
+                    "sidenav-main",
+                    "nav-expanded",
+                    "nav-collapsible",
+                    "sidenav-dark",
+                    "sidenav-gradient",
+                    "sidenav-active-rounded"
+                ]
+            }
         }
     },
-    "starter-kit": "starter-kit/vertical-gradient-menu-template/page-blank.html"
+    "starter-kit": "/starter-kit/vertical-gradient-menu-template/page-blank.html"
 }

@@ -10,14 +10,14 @@
             "attributes": {
                 "class": [
                     "vertical-layout",
-                    "page-header-light",
                     "vertical-menu-collapsible",
-                    "vertical-dark-menu",
+                    "page-header-dark",
+                    "vertical-modern-menu",
                     "preload-transitions",
                     "2-columns"
                 ],
                 "data-open": "click",
-                "data-menu": "vertical-dark-menu",
+                "data-menu": "vertical-modern-menu",
                 "data-col": "2-columns"
             }
         },
@@ -27,11 +27,11 @@
                     "sidenav-main",
                     "nav-expanded",
                     "nav-collapsible",
-                    "sidenav-dark",
-                    "sidenav-active-rounded"
+                    "sidenav-light",
+                    "sidenav-active-square"
                 ]
             }
         }
     },
-    "starter-kit": "/starter-kit/vertical-dark-menu-template/page-blank.html"
+    "starter-kit": "starter-kit/vertical-modern-menu-template/page-blank.html"
 }
