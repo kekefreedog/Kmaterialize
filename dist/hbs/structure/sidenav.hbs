@@ -3,7 +3,7 @@
 Hide files beginning by dot #3
 
  --}}
-<aside id="sidenav" data-layout="structure/sidenav" class="{{#if _user_interface.framework.body.attributes}}{{{setAttributes _user_interface.framework.body.attributes}}}{{/if}}{{#ifEquals _cookies.SIDENAV.STATUS "expanded"}} nav-lock nav-expanded{{else}} nav-collapsed{{/ifEquals}}">
+<aside id="sidenav" data-layout="structure/sidenav" class="{{#if _user_interface.framework.aside.attributes.class}}{{#each _user_interface.framework.aside.attributes.class}}{{.}} {{/each}}{{/if}}{{#ifEquals _cookies.SIDENAV.STATUS "expanded"}} nav-lock nav-expanded{{else}} nav-collapsed{{/ifEquals}}">
     <div class="brand-sidebar">
         <h1 class="logo-wrapper">
             <a class="brand-logo darken-1" href="/">
